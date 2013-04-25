@@ -1,0 +1,53 @@
+{% set locparams = app.request.attributes.get('_route_params')|default({})|merge(app.request.query.all()) %}
+{% set main_route = app.request.attributes.get("_route") %}
+
+<div id="elsassSeeraiwerBar" class="eSeeraiwer-toolbar" style="">
+    <!-- START of Elsass Seeraiwer Toolbar -->
+    <style type="text/css">
+        {% include '@ElsassSeeraiwerBar/Toolbar/toolbar.css.twig' with { 'position': position, 'floatable': true } %}
+    </style>
+    <div id="eSeeraiwerToolbarMainContent" class="eSeeraiwer-toolbarreset">
+        {% if app.debug %}
+            {#{ render(controller("ElsassSeeraiwerBarBundle:Toolbar:toolbarVersion")) }#}
+            {{ include("ElsassSeeraiwerBarBundle:Element:toolbarVersion.html.twig", { "version": version }) }}
+        {% endif %}
+        {{ include("ElsassSeeraiwerBarBundle:Element:toolbarUser.html.twig") }}
+        {{ include("ElsassSeeraiwerBarBundle:Element:toolbarLocale.html.twig", { "main_route": main_route, "locparams": locparams }) }}
+        {% for name, value in templates %}
+            {% if value.parameters is defined %}
+                {% if value.controller is defined %}
+                    {{ render(controller(value.controller, value.parameters)) }}
+                {% elseif value.template is defined %}
+                    {{ include(value.template, value.parameters) }}
+                {% endif %}
+            {% else %}
+                {% if value.controller is defined %}
+                    {{ render(controller(value.controller)) }}
+                {% elseif value.template is defined %}
+                    {{ include(value.template) }}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+        {% if 'normal' != position %}
+            <a class="hide-button" title="Close Toolbar" onclick="
+                var p = this.parentNode;
+                p.style.display = 'none';
+                (p.previousElementSibling || p.previousSibling).style.display = 'none';
+                document.getElementById('eSeeraiwerMiniToolbar').style.display = 'block';
+                eSbjs.setPreference('toolbar/displayState', 'none');
+            "></a>
+        {% endif %}
+    </div>
+    <!-- END of Elsass Seeraiwer Toolbar -->
+</div>
+<script type="text/javascript">/*<![CDATA[*/
+    (function () {
+        {% if 'top' == position %}
+            var elsassSeeraiwerBar = document.getElementById('elsassSeeraiwerBar');
+            document.body.insertBefore(
+                document.body.removeChild(elsassSeeraiwerBar),
+                document.body.firstChild
+            );
+        {% endif %}
+    })();
+/*]]>*/</script>

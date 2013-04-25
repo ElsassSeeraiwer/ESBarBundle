@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="elsass_seeraiwer_bar.toolbar.class">Elsass\SeeraiwerBarBundle\EventListener\ToolBarListener</parameter>
+    </parameters>
+
+    <services>
+        <service id="elsass_seeraiwer_bar.toolbar" class="%elsass_seeraiwer_bar.toolbar.class%">
+            <tag name="kernel.event_subscriber" />
+            <argument type="service" id="twig" />
+            <argument>%elsass_seeraiwer_bar.toolbar.mode%</argument>
+            <argument>%elsass_seeraiwer_bar.toolbar.position%</argument>
+            <argument>%elsass_seeraiwer_bar.toolbar.templates%</argument>
+        </service>
+    </services>
+</container>

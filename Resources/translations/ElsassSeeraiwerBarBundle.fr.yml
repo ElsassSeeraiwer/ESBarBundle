@@ -1,0 +1,11 @@
+toolbar:
+    user:
+        actions: Actions
+        logged_in_as: Connecté en tant que
+        login: Se connecter
+        logout: Se déconnecter
+        profile:
+            edit: Editer mon profil
+            show: Voir mon profil
+        register: S'inscrire
+        roles: Roles

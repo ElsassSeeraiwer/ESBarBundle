@@ -1,0 +1,18 @@
+{
+    "name": "elsass/seeraiwer-bar-bundle",
+    "description": "Symfony ElsassSeeraiwerBarBundle",
+    "license": "MIT",
+    "require": {
+        "friendsofsymfony/user-bundle": "*"
+    },
+    "authors": [
+        {
+            "name": "Eyermann Kévin",
+            "email": "kevin.eyermann@ign.fr"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "Elsass\\SeeraiwerUserBundle": "" }
+    },
+    "target-dir": "Elsass/SeeraiwerUserBundle"
+}

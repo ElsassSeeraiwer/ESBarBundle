@@ -1,6 +1,6 @@
 {
-    "name": "elsass/seeraiwer-bar-bundle",
-    "description": "Symfony ElsassSeeraiwerBarBundle",
+    "name": "elsass-seeraiwer/bar-bundle",
+    "description": "Symfony ElsassSeeraiwer/ESBarBundle",
     "license": "MIT",
     "require": {
         "friendsofsymfony/user-bundle": "*"
@@ -12,7 +12,7 @@
         }
     ],
     "autoload": {
-        "psr-0": { "Elsass\\SeeraiwerUserBundle": "" }
+        "psr-0": { "ElsassSeeraiwer\\ESBarBundle": "" }
     },
-    "target-dir": "Elsass/SeeraiwerUserBundle"
+    "target-dir": "ElsassSeeraiwer/ESBarBundle"
 }

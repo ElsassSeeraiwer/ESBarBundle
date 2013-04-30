@@ -5,23 +5,23 @@
     <div class="eSeeraiwer-toolbar-icon">
         <a href="#">
             {% if app.request.locale == 'fr' %}
-                <img width="26" alt="{{ 'toolbar.locale.fr'|trans({}, 'ElsassSeeraiwerBarBundle') }}" src="{{ asset('bundles/elsassseeraiwerbar/images/flags/fr.png') }}">
+                <img width="26" alt="{{ 'toolbar.locale.fr'|trans({}, 'ESBarBundle') }}" src="{{ asset('bundles/elsassseeraiweresbar/images/flags/fr.png') }}">
             {% else %}
-                <img width="26" alt="{{ 'toolbar.locale.en'|trans({}, 'ElsassSeeraiwerBarBundle') }}" src="{{ asset('bundles/elsassseeraiwerbar/images/flags/en.png') }}">
+                <img width="26" alt="{{ 'toolbar.locale.en'|trans({}, 'ESBarBundle') }}" src="{{ asset('bundles/elsassseeraiweresbar/images/flags/en.png') }}">
             {% endif %}
         </a>
     </div>      
     <div class="eSeeraiwer-toolbar-info">
         {% if app.request.locale == 'fr' %}
             <div class="eSeeraiwer-toolbar-info-piece" style="margin-bottom:0px;">
-                <a href="{{ path(main_route|default('elsass_seeraiwerbar_element_toolbarlocale'), enParams) }}" rel="fr">
-                    <img width="26" alt="{{ 'toolbar.locale.en'|trans({}, 'ElsassSeeraiwerBarBundle') }}" src="{{ asset('bundles/elsassseeraiwerbar/images/flags/en.png') }}">
+                <a href="{{ path(main_route|default('elsass_seeraiwer_esbar_element_toolbarlocale'), enParams) }}" rel="fr">
+                    <img width="26" alt="{{ 'toolbar.locale.en'|trans({}, 'ESBarBundle') }}" src="{{ asset('bundles/elsassseeraiweresbar/images/flags/en.png') }}">
                 </a>
             </div>
         {% else %}
             <div class="eSeeraiwer-toolbar-info-piece" style="margin-bottom:0px;">
-                <a href="{{ path(main_route|default('elsass_seeraiwerbar_element_toolbarlocale'), frParams) }}" rel="en">
-                    <img width="26" alt="{{ 'toolbar.locale.fr'|trans({}, 'ElsassSeeraiwerBarBundle') }}" src="{{ asset('bundles/elsassseeraiwerbar/images/flags/fr.png') }}">
+                <a href="{{ path(main_route|default('elsass_seeraiwer_esbar_element_toolbarlocale'), frParams) }}" rel="en">
+                    <img width="26" alt="{{ 'toolbar.locale.fr'|trans({}, 'ESBarBundle') }}" src="{{ asset('bundles/elsassseeraiweresbar/images/flags/fr.png') }}">
                 </a>
             </div>
         {% endif %}

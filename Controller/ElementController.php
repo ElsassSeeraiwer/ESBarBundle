@@ -1,6 +1,6 @@
 <?php
 
-namespace Elsass\SeeraiwerBarBundle\Controller;
+namespace ElsassSeeraiwer\ESBarBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Elsass\SeeraiwerBarBundle\EventListener;
+namespace ElsassSeeraiwer\ESBarBundle\EventListener;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
@@ -75,7 +75,7 @@ class ToolBarListener implements EventSubscriberInterface
 
         if (false !== $pos) {
             $toolbar = "\n".str_replace("\n", '', $this->twig->render(
-                'ElsassSeeraiwerBarBundle:Toolbar:toolbar.html.twig',
+                'ElsassSeeraiwerESBarBundle:Toolbar:toolbar.html.twig',
                 array(
                     'position'  => $this->position,
                     'templates' => $this->templates,

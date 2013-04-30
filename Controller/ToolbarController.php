@@ -1,6 +1,6 @@
 <?php
 
-namespace Elsass\SeeraiwerBarBundle\Controller;
+namespace ElsassSeeraiwer\ESBarBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * @Route("/seeraiwer")
+ * @Route("/_seeraiwerBar")
  */
 class ToolbarController extends Controller
 {

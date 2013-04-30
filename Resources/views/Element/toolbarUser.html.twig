@@ -3,7 +3,7 @@
     <div class="eSeeraiwer-toolbar-icon">
         <a href="{{ path('fos_user_registration_register') }}" style="height:28px;">
             <img width="0" height="28" alt="" src=""/>
-            <span class="eSeeraiwer-toolbar-status eSeeraiwer-toolbar-status">{{ 'toolbar.user.register'|trans({}, 'ElsassSeeraiwerBarBundle') }}</span>
+            <span class="eSeeraiwer-toolbar-status eSeeraiwer-toolbar-status">{{ 'toolbar.user.register'|trans({}, 'ESBarBundle') }}</span>
         </a>
     </div>      
 </div>
@@ -12,7 +12,7 @@
     <div class="eSeeraiwer-toolbar-icon">
         <a href="{{ path('fos_user_security_logout') }}" style="height:28px;">
             <img width="0" height="28" alt="" src=""/>
-            <span class="eSeeraiwer-toolbar-status eSeeraiwer-toolbar-status-red">{{ 'toolbar.user.logout'|trans({}, 'ElsassSeeraiwerBarBundle') }}</span>
+            <span class="eSeeraiwer-toolbar-status eSeeraiwer-toolbar-status-red">{{ 'toolbar.user.logout'|trans({}, 'ESBarBundle') }}</span>
         </a>
     </div>      
 </div>
@@ -28,27 +28,27 @@
             {% if app.user %}
                 <span class="eSeeraiwer-toolbar-status eSeeraiwer-toolbar-status-green">{{ app.user.username|default('') }}</span>
             {% else %}
-                <span class="eSeeraiwer-toolbar-status eSeeraiwer-toolbar-status">{{ 'toolbar.user.login'|trans({}, 'ElsassSeeraiwerBarBundle') }}</span>
+                <span class="eSeeraiwer-toolbar-status eSeeraiwer-toolbar-status">{{ 'toolbar.user.login'|trans({}, 'ESBarBundle') }}</span>
             {% endif %}
         </a>
     </div>      
     {% if app.user %}
         <div class="eSeeraiwer-toolbar-info">
             <div class="eSeeraiwer-toolbar-info-piece">
-                <b>{{ 'toolbar.user.logged_in_as'|trans({}, 'ElsassSeeraiwerBarBundle') }}</b>
+                <b>{{ 'toolbar.user.logged_in_as'|trans({}, 'ESBarBundle') }}</b>
                 <span class="eSeeraiwer-toolbar-status eSeeraiwer-toolbar-status-green">{{ app.user.username }}</span>
             </div>
             <div class="eSeeraiwer-toolbar-info-piece">
-                <b>{{ 'toolbar.user.roles'|trans({}, 'ElsassSeeraiwerBarBundle') }}</b>
+                <b>{{ 'toolbar.user.roles'|trans({}, 'ESBarBundle') }}</b>
                 <span class="eSeeraiwer-toolbar-status eSeeraiwer-toolbar-status">{{ app.user.roles|join('</span><span class="eSeeraiwer-toolbar-status eSeeraiwer-toolbar-status">')|raw }}</span>
             </div>
             <div class="eSeeraiwer-toolbar-info-piece">
-                <b>{{ 'toolbar.user.actions'|trans({}, 'ElsassSeeraiwerBarBundle') }}</b>
+                <b>{{ 'toolbar.user.actions'|trans({}, 'ESBarBundle') }}</b>
                 <a href="{{ path('fos_user_profile_show') }}">
-                    <span class="eSeeraiwer-toolbar-status eSeeraiwer-toolbar-status-yellow">{{ 'toolbar.user.profile.show'|trans({}, 'ElsassSeeraiwerBarBundle') }}</span>
+                    <span class="eSeeraiwer-toolbar-status eSeeraiwer-toolbar-status-yellow">{{ 'toolbar.user.profile.show'|trans({}, 'ESBarBundle') }}</span>
                 </a>
                 <a href="{{ path('fos_user_profile_edit') }}">
-                    <span class="eSeeraiwer-toolbar-status eSeeraiwer-toolbar-status-yellow">{{ 'toolbar.user.profile.edit'|trans({}, 'ElsassSeeraiwerBarBundle') }}</span>
+                    <span class="eSeeraiwer-toolbar-status eSeeraiwer-toolbar-status-yellow">{{ 'toolbar.user.profile.edit'|trans({}, 'ESBarBundle') }}</span>
                 </a>
             </div>
         </div>

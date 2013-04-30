@@ -1,6 +1,6 @@
 <?php
 
-namespace Elsass\SeeraiwerBarBundle\Tests\Controller;
+namespace ElsassSeeraiwer\ESBarBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

@@ -4,15 +4,15 @@
 <div id="elsassSeeraiwerBar" class="eSeeraiwer-toolbar" style="">
     <!-- START of Elsass Seeraiwer Toolbar -->
     <style type="text/css">
-        {% include '@ElsassSeeraiwerBar/Toolbar/toolbar.css.twig' with { 'position': position, 'floatable': true } %}
+        {% include '@ElsassSeeraiwerESBarBundle/Toolbar/toolbar.css.twig' with { 'position': position, 'floatable': true } %}
     </style>
     <div id="eSeeraiwerToolbarMainContent" class="eSeeraiwer-toolbarreset">
         {% if app.debug %}
-            {#{ render(controller("ElsassSeeraiwerBarBundle:Toolbar:toolbarVersion")) }#}
-            {{ include("ElsassSeeraiwerBarBundle:Element:toolbarVersion.html.twig", { "version": version }) }}
+            {#{ render(controller("ElsassSeeraiwerESBarBundle:Toolbar:toolbarVersion")) }#}
+            {{ include("ElsassSeeraiwerESBarBundle:Element:toolbarVersion.html.twig", { "version": version }) }}
         {% endif %}
-        {{ include("ElsassSeeraiwerBarBundle:Element:toolbarUser.html.twig") }}
-        {{ include("ElsassSeeraiwerBarBundle:Element:toolbarLocale.html.twig", { "main_route": main_route, "locparams": locparams }) }}
+        {{ include("ElsassSeeraiwerESBarBundle:Element:toolbarUser.html.twig") }}
+        {{ include("ElsassSeeraiwerESBarBundle:Element:toolbarLocale.html.twig", { "main_route": main_route, "locparams": locparams }) }}
         {% for name, value in templates %}
             {% if value.parameters is defined %}
                 {% if value.controller is defined %}

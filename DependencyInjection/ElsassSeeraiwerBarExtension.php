@@ -1,6 +1,6 @@
 <?php
 
-namespace Elsass\SeeraiwerBarBundle\DependencyInjection;
+namespace ElsassSeeraiwer\ESBarBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -35,8 +35,8 @@ class ElsassSeeraiwerBarExtension extends Extension
             $mode = ToolBarListener::ENABLED;
         }
 
-        $container->setParameter('elsass_seeraiwer_bar.toolbar.mode', $mode);
-        $container->setParameter('elsass_seeraiwer_bar.toolbar.templates', $config['templates']);
-        $container->setParameter('elsass_seeraiwer_bar.toolbar.position', $config['position']);
+        $container->setParameter('es_bar.toolbar.mode', $mode);
+        $container->setParameter('es_bar.toolbar.templates', $config['templates']);
+        $container->setParameter('es_bar.toolbar.position', $config['position']);
     }
 }

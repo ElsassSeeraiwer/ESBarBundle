@@ -19,14 +19,12 @@ class ToolBarListener implements EventSubscriberInterface
     const version   = 'dev';
 
     protected $twig;
-    protected $mode;
     protected $position;
     protected $templates;
 
-    public function __construct(\Twig_Environment $twig, $mode = self::ENABLED, $position = 'top', array $templates)
+    public function __construct(\Twig_Environment $twig, $position = 'top', array $templates)
     {
         $this->twig = $twig;
-        $this->mode = (integer) $mode;
         $this->position = $position;
         $this->templates = $templates;
     }
@@ -45,9 +43,7 @@ class ToolBarListener implements EventSubscriberInterface
             return;
         }
 
-        if (self::DISABLED === $this->mode
-//            || !$response->headers->has('X-Debug-Token')
-            || $response->isRedirection()
+        if ($response->isRedirection()
             || ($response->headers->has('Content-Type') && false === strpos($response->headers->get('Content-Type'), 'html'))
             || 'html' !== $request->getRequestFormat()
         ) {

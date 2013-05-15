@@ -13,7 +13,7 @@ use ElsassSeeraiwer\ESBarBundle\EventListener\ToolBarListener;
  *
  * @author Kevin Eyermann <kevin.eyermann@gmail.com>
  */
-class ElsassSeeraiwerBarExtension extends Extension
+class ElsassSeeraiwerESBarExtension extends Extension
 {
     /**
      * Loads the web profiler configuration.
@@ -29,13 +29,13 @@ class ElsassSeeraiwerBarExtension extends Extension
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('toolbar.xml');
 
-        /*if (!$config['toolbar']) {
+        if (!$config['toolbar']) {
             $mode = ToolBarListener::DISABLED;
         } else {
             $mode = ToolBarListener::ENABLED;
-        }*/
+        }
 
-        //$container->setParameter('elsass_seeraiwer_es_bar.toolbar.mode', $mode);
+        $container->setParameter('elsass_seeraiwer_es_bar.toolbar.mode', $mode);
         $container->setParameter('elsass_seeraiwer_es_bar.toolbar.templates', $config['templates']);
         $container->setParameter('elsass_seeraiwer_es_bar.toolbar.position', $config['position']);
     }

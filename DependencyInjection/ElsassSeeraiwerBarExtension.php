@@ -35,8 +35,8 @@ class ElsassSeeraiwerBarExtension extends Extension
             $mode = ToolBarListener::ENABLED;
         }
 
-        $container->setParameter('es_bar.toolbar.mode', $mode);
-        $container->setParameter('es_bar.toolbar.templates', $config['templates']);
-        $container->setParameter('es_bar.toolbar.position', $config['position']);
+        $container->setParameter('elsass_seeraiwer_es_bar.toolbar.mode', $mode);
+        $container->setParameter('elsass_seeraiwer_es_bar.toolbar.templates', $config['templates']);
+        $container->setParameter('elsass_seeraiwer_es_bar.toolbar.position', $config['position']);
     }
 }

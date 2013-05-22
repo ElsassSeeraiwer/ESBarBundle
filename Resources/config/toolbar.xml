@@ -14,8 +14,8 @@
             <argument type="service" id="twig" />
             <argument>%elsass_seeraiwer_es_bar.toolbar.position%</argument>
             <argument>%elsass_seeraiwer_es_bar.toolbar.templates%</argument>
-            <argument>%elsass_seeraiwer_es_bar.toolbar.locale_tool%</argument>
-            <argument>%elsass_seeraiwer_es_bar.toolbar.registration%</argument>
+            <argument>%elsass_seeraiwer_es_bar.locale_tool%</argument>
+            <argument>%elsass_seeraiwer_es_bar.registration%</argument>
         </service>
     </services>
 </container>

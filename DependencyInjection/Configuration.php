@@ -36,6 +36,7 @@ class Configuration implements ConfigurationInterface
                         ->children()
                             ->scalarNode('controller')->end()
                             ->scalarNode('template')->end()
+                            ->booleanNode('next')->defaultTrue()->end()
                             ->variableNode('parameters')
                             ->end()
                         ->end()

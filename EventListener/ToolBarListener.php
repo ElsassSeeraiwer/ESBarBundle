@@ -25,7 +25,7 @@ class ToolBarListener implements EventSubscriberInterface
     protected $registration;
     protected $container;
 
-    public function __construct(\Twig_Environment $twig, $container, $position = 'top', array $templates, boolean $locale_tool, boolean $registration)
+    public function __construct(\Twig_Environment $twig, $container, $position = 'top', array $templates)
     {
         $this->twig = $twig;
         $this->position = $position;

@@ -11,8 +11,10 @@
             {#{ render(controller("ElsassSeeraiwerESBarBundle:Toolbar:toolbarVersion")) }#}
             {{ include("ElsassSeeraiwerESBarBundle:Element:toolbarVersion.html.twig", { "version": version }) }}
         {% endif %}
-        {{ include("ElsassSeeraiwerESBarBundle:Element:toolbarUser.html.twig") }}
-        {{ include("ElsassSeeraiwerESBarBundle:Element:toolbarLocale.html.twig", { "main_route": main_route, "locparams": locparams }) }}
+        {{ include("ElsassSeeraiwerESBarBundle:Element:toolbarUser.html.twig", {'options': options}) }}
+        {% if options.locale_tool is true %}
+            {{ include("ElsassSeeraiwerESBarBundle:Element:toolbarLocale.html.twig", { "main_route": main_route, "locparams": locparams }) }}
+        {% endif %}
         {% for name, value in templates %}
             {% if value.parameters is defined %}
                 {% if value.controller is defined %}

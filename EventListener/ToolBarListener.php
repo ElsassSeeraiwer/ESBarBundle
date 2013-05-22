@@ -21,12 +21,16 @@ class ToolBarListener implements EventSubscriberInterface
     protected $twig;
     protected $position;
     protected $templates;
+    protected $locale_tool;
+    protected $registration;
 
-    public function __construct(\Twig_Environment $twig, $position = 'top', array $templates)
+    public function __construct(\Twig_Environment $twig, $position = 'top', array $templates, boolean $locale_tool, boolean $registration)
     {
         $this->twig = $twig;
         $this->position = $position;
         $this->templates = $templates;
+        $this->locale_tool = $locale_tool;
+        $this->registration = $registration;
     }
 
     public function onKernelResponse(FilterResponseEvent $event)
@@ -75,7 +79,11 @@ class ToolBarListener implements EventSubscriberInterface
                 array(
                     'position'  => $this->position,
                     'templates' => $this->templates,
-                    'version'   => self::version
+                    'version'   => self::version,
+                    'options'   => array(
+                        'locale_tool'   => $this->locale_tool,
+                        'registration'  => $this->registration
+                    )
                 )
             ))."\n";
             $content = $substrFunction($content, 0, $pos).$toolbar.$substrFunction($content, $pos);

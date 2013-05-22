@@ -1,21 +1,23 @@
 {% if not app.user %}
-<div class="eSeeraiwer-toolbar-block">
-    <div class="eSeeraiwer-toolbar-icon">
-        <a href="{{ path('fos_user_registration_register') }}" style="height:28px;">
-            <img width="0" height="28" alt="" src=""/>
-            <span class="eSeeraiwer-toolbar-status eSeeraiwer-toolbar-status">{{ 'toolbar.user.register'|trans({}, 'ESBarBundle') }}</span>
-        </a>
-    </div>      
-</div>
+    {% if options.registration is true %}
+        <div class="eSeeraiwer-toolbar-block">
+            <div class="eSeeraiwer-toolbar-icon">
+                <a href="{{ path('fos_user_registration_register') }}" style="height:28px;">
+                    <img width="0" height="28" alt="" src=""/>
+                    <span class="eSeeraiwer-toolbar-status eSeeraiwer-toolbar-status">{{ 'toolbar.user.register'|trans({}, 'ESBarBundle') }}</span>
+                </a>
+            </div>      
+        </div>
+    {% endif %}
 {% else %}
-<div class="eSeeraiwer-toolbar-block">
-    <div class="eSeeraiwer-toolbar-icon">
-        <a href="{{ path('fos_user_security_logout') }}" style="height:28px;">
-            <img width="0" height="28" alt="" src=""/>
-            <span class="eSeeraiwer-toolbar-status eSeeraiwer-toolbar-status-red">{{ 'toolbar.user.logout'|trans({}, 'ESBarBundle') }}</span>
-        </a>
-    </div>      
-</div>
+    <div class="eSeeraiwer-toolbar-block">
+        <div class="eSeeraiwer-toolbar-icon">
+            <a href="{{ path('fos_user_security_logout') }}" style="height:28px;">
+                <img width="0" height="28" alt="" src=""/>
+                <span class="eSeeraiwer-toolbar-status eSeeraiwer-toolbar-status-red">{{ 'toolbar.user.logout'|trans({}, 'ESBarBundle') }}</span>
+            </a>
+        </div>      
+    </div>
 {% endif %}
 <div class="eSeeraiwer-toolbar-block">
     <div class="eSeeraiwer-toolbar-icon">

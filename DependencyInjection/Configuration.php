@@ -21,6 +21,8 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->booleanNode('toolbar')->defaultTrue()->end()
+                ->booleanNode('locale_tool')->defaultTrue()->end()
+                ->booleanNode('registration')->defaultTrue()->end()
                 ->scalarNode('position')
                     ->defaultValue('top')
                     ->validate()

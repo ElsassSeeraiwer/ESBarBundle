@@ -36,6 +36,8 @@ class ElsassSeeraiwerESBarExtension extends Extension
         }
 
         $container->setParameter('elsass_seeraiwer_es_bar.toolbar.mode', $mode);
+        $container->setParameter('elsass_seeraiwer_es_bar.local_tool', $config['locale_tool']);
+        $container->setParameter('elsass_seeraiwer_es_bar.registration', $config['registration']);
         $container->setParameter('elsass_seeraiwer_es_bar.toolbar.templates', $config['templates']);
         $container->setParameter('elsass_seeraiwer_es_bar.toolbar.position', $config['position']);
     }

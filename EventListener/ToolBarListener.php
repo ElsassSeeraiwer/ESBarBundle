@@ -23,14 +23,17 @@ class ToolBarListener implements EventSubscriberInterface
     protected $templates;
     protected $locale_tool;
     protected $registration;
+    protected $container;
 
-    public function __construct(\Twig_Environment $twig, $position = 'top', array $templates, boolean $locale_tool, boolean $registration)
+    public function __construct(\Twig_Environment $twig, $container, $position = 'top', array $templates, boolean $locale_tool, boolean $registration)
     {
         $this->twig = $twig;
         $this->position = $position;
         $this->templates = $templates;
-        $this->locale_tool = $locale_tool;
-        $this->registration = $registration;
+        $this->container = $container;
+
+        $this->locale_tool = $this->container->getParameter('elsass_seeraiwer_es_bar.toolbar.local_tool');
+        $this->registration = $this->container->getParameter('elsass_seeraiwer_es_bar.toolbar.registration');
     }
 
     public function onKernelResponse(FilterResponseEvent $event)

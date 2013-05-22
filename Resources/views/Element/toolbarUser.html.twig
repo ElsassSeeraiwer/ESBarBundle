@@ -1,5 +1,5 @@
 {% if not app.user %}
-    {% if options.registration is true %}
+    {% if options.registration %}
         <div class="eSeeraiwer-toolbar-block">
             <div class="eSeeraiwer-toolbar-icon">
                 <a href="{{ path('fos_user_registration_register') }}" style="height:28px;">

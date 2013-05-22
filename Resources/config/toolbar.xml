@@ -12,10 +12,9 @@
         <service id="elsass_seeraiwer_es_bar.toolbar" class="%elsass_seeraiwer_es_bar.toolbar.class%">
             <tag name="kernel.event_subscriber" />
             <argument type="service" id="twig" />
+            <argument type="service" id="service_container" />
             <argument>%elsass_seeraiwer_es_bar.toolbar.position%</argument>
             <argument>%elsass_seeraiwer_es_bar.toolbar.templates%</argument>
-            <argument>%elsass_seeraiwer_es_bar.toolbar.locale_tool%</argument>
-            <argument>%elsass_seeraiwer_es_bar.toolbar.registration%</argument>
         </service>
     </services>
 </container>

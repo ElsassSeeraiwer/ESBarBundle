@@ -4,7 +4,13 @@
 <div id="elsassSeeraiwerBar" class="eSeeraiwer-toolbar" style="">
     <!-- START of Elsass Seeraiwer Toolbar -->
     <style type="text/css">
+    {% if options.style == 'default' %}
         {% include 'ElsassSeeraiwerESBarBundle:Toolbar:toolbar.css.twig' with { 'position': position, 'floatable': true } %}
+    {% elseif options.style == 'google' %}
+        {% include 'ElsassSeeraiwerESBarBundle:Toolbar:google.css.twig' with { 'position': position, 'floatable': true } %}
+    {% else %}
+        {% include options.style with { 'position': position, 'floatable': true } %}
+    {% endif  %}
     </style>
     <div id="eSeeraiwerToolbarMainContent" class="eSeeraiwer-toolbarreset">
         {% if app.debug %}
@@ -50,13 +56,13 @@
             {% endif %}
         {% endfor %}
         {% if 'normal' != position %}
-            <a class="hide-button" title="Close Toolbar" onclick="
+            {#<a class="hide-button" title="Close Toolbar" onclick="
                 var p = this.parentNode;
                 p.style.display = 'none';
                 (p.previousElementSibling || p.previousSibling).style.display = 'none';
                 document.getElementById('eSeeraiwerMiniToolbar').style.display = 'block';
                 eSbjs.setPreference('toolbar/displayState', 'none');
-            "></a>
+            "></a>#}
         {% endif %}
     </div>
     <!-- END of Elsass Seeraiwer Toolbar -->

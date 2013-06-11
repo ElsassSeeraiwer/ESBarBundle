@@ -23,7 +23,7 @@ class Configuration implements ConfigurationInterface
                 ->booleanNode('toolbar')->defaultTrue()->end()
                 ->booleanNode('locale_tool')->defaultTrue()->end()
                 ->booleanNode('registration')->defaultTrue()->end()
-                ->variableNode('style')->defaultValue('default')->end()
+                ->variableNode('style')->defaultValue('google')->end()
                 ->scalarNode('position')
                     ->defaultValue('top')
                     ->validate()

@@ -1,7 +1,7 @@
 {% set frParams = locparams|default({})|merge({'_locale': 'fr'}) %}
 {% set enParams = locparams|default({})|merge({'_locale': 'en'}) %}
 
-<div class="eSeeraiwer-toolbar-block">
+<div class="eSeeraiwer-toolbar-block esbarLocale">
     <div class="eSeeraiwer-toolbar-icon">
         <a href="#">
             {% if app.request.locale == 'fr' %}

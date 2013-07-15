@@ -1,7 +1,7 @@
 {% set locparams = app.request.attributes.get('_route_params')|default({})|merge(app.request.query.all()) %}
 {% set main_route = app.request.attributes.get("_route") %}
 
-<div id="elsassSeeraiwerBar" class="eSeeraiwer-toolbar" style="">
+<div id="elsassSeeraiwerBar" class="eSeeraiwer-toolbar">
     <!-- START of Elsass Seeraiwer Toolbar -->
     <style type="text/css">
     {% if options.style == 'default' %}
@@ -13,57 +13,59 @@
     {% endif  %}
     </style>
     <div id="eSeeraiwerToolbarMainContent" class="eSeeraiwer-toolbarreset">
-        {% if app.debug %}
-            {#{ render(controller("ElsassSeeraiwerESBarBundle:Toolbar:toolbarVersion")) }#}
-            {{ include("ElsassSeeraiwerESBarBundle:Element:toolbarVersion.html.twig", { "version": version }) }}
-        {% endif %}
-        {% for name, value in templates %}
-            {% if not value.next %}
-                {% if value.parameters is defined %}
-                    {% if value.controller is defined %}
-                        {{ render(controller(value.controller, value.parameters)) }}
-                    {% elseif value.template is defined %}
-                        {{ include(value.template, value.parameters) }}
-                    {% endif %}
-                {% else %}
-                    {% if value.controller is defined %}
-                        {{ render(controller(value.controller)) }}
-                    {% elseif value.template is defined %}
-                        {{ include(value.template) }}
+        <div class="{{ options.classname }}">
+            {% if app.debug %}
+                {#{ render(controller("ElsassSeeraiwerESBarBundle:Toolbar:toolbarVersion")) }#}
+                {{ include("ElsassSeeraiwerESBarBundle:Element:toolbarVersion.html.twig", { "version": version }) }}
+            {% endif %}
+            {% for name, value in templates %}
+                {% if not value.next %}
+                    {% if value.parameters is defined %}
+                        {% if value.controller is defined %}
+                            {{ render(controller(value.controller, value.parameters)) }}
+                        {% elseif value.template is defined %}
+                            {{ include(value.template, value.parameters) }}
+                        {% endif %}
+                    {% else %}
+                        {% if value.controller is defined %}
+                            {{ render(controller(value.controller)) }}
+                        {% elseif value.template is defined %}
+                            {{ include(value.template) }}
+                        {% endif %}
                     {% endif %}
                 {% endif %}
+            {% endfor %}
+            {{ include("ElsassSeeraiwerESBarBundle:Element:toolbarUser.html.twig", {'options': options}) }}
+            {% if options.locale_tool %}
+                {{ include("ElsassSeeraiwerESBarBundle:Element:toolbarLocale.html.twig", { "main_route": main_route, "locparams": locparams }) }}
             {% endif %}
-        {% endfor %}
-        {{ include("ElsassSeeraiwerESBarBundle:Element:toolbarUser.html.twig", {'options': options}) }}
-        {% if options.locale_tool %}
-            {{ include("ElsassSeeraiwerESBarBundle:Element:toolbarLocale.html.twig", { "main_route": main_route, "locparams": locparams }) }}
-        {% endif %}
-        {% for name, value in templates %}
-            {% if value.next %}
-                {% if value.parameters is defined %}
-                    {% if value.controller is defined %}
-                        {{ render(controller(value.controller, value.parameters)) }}
-                    {% elseif value.template is defined %}
-                        {{ include(value.template, value.parameters) }}
-                    {% endif %}
-                {% else %}
-                    {% if value.controller is defined %}
-                        {{ render(controller(value.controller)) }}
-                    {% elseif value.template is defined %}
-                        {{ include(value.template) }}
+            {% for name, value in templates %}
+                {% if value.next %}
+                    {% if value.parameters is defined %}
+                        {% if value.controller is defined %}
+                            {{ render(controller(value.controller, value.parameters)) }}
+                        {% elseif value.template is defined %}
+                            {{ include(value.template, value.parameters) }}
+                        {% endif %}
+                    {% else %}
+                        {% if value.controller is defined %}
+                            {{ render(controller(value.controller)) }}
+                        {% elseif value.template is defined %}
+                            {{ include(value.template) }}
+                        {% endif %}
                     {% endif %}
                 {% endif %}
+            {% endfor %}
+            {% if 'normal' != position %}
+                {#<a class="hide-button" title="Close Toolbar" onclick="
+                    var p = this.parentNode;
+                    p.style.display = 'none';
+                    (p.previousElementSibling || p.previousSibling).style.display = 'none';
+                    document.getElementById('eSeeraiwerMiniToolbar').style.display = 'block';
+                    eSbjs.setPreference('toolbar/displayState', 'none');
+                "></a>#}
             {% endif %}
-        {% endfor %}
-        {% if 'normal' != position %}
-            {#<a class="hide-button" title="Close Toolbar" onclick="
-                var p = this.parentNode;
-                p.style.display = 'none';
-                (p.previousElementSibling || p.previousSibling).style.display = 'none';
-                document.getElementById('eSeeraiwerMiniToolbar').style.display = 'block';
-                eSbjs.setPreference('toolbar/displayState', 'none');
-            "></a>#}
-        {% endif %}
+        </div>
     </div>
     <!-- END of Elsass Seeraiwer Toolbar -->
 </div>

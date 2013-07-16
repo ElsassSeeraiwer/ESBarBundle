@@ -41,6 +41,7 @@ class ElsassSeeraiwerESBarExtension extends Extension
         $container->setParameter('elsass_seeraiwer_es_bar.toolbar.templates', $config['templates']);
         $container->setParameter('elsass_seeraiwer_es_bar.toolbar.position', $config['position']);
         $container->setParameter('elsass_seeraiwer_es_bar.toolbar.style', $config['style']);
+        $container->setParameter('elsass_seeraiwer_es_bar.toolbar.innerclassname', $config['innerclassname']);
         $container->setParameter('elsass_seeraiwer_es_bar.toolbar.classname', $config['classname']);
         $container->setParameter('elsass_seeraiwer_es_bar.toolbar.icons', $config['icons']);
     }

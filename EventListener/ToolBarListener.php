@@ -26,6 +26,7 @@ class ToolBarListener implements EventSubscriberInterface
     protected $container;
     protected $style;
     protected $classname;
+    protected $innerclassname;
     protected $icons;
 
     public function __construct(\Twig_Environment $twig, $container, $position = 'top', array $templates)
@@ -39,6 +40,7 @@ class ToolBarListener implements EventSubscriberInterface
         $this->registration = $this->container->getParameter('elsass_seeraiwer_es_bar.toolbar.registration');
         $this->style = $this->container->getParameter('elsass_seeraiwer_es_bar.toolbar.style');
         $this->classname = $this->container->getParameter('elsass_seeraiwer_es_bar.toolbar.classname');
+        $this->innerclassname = $this->container->getParameter('elsass_seeraiwer_es_bar.toolbar.innerclassname');
         $this->icons = $this->container->getParameter('elsass_seeraiwer_es_bar.toolbar.icons');
     }
 
@@ -94,6 +96,7 @@ class ToolBarListener implements EventSubscriberInterface
                         'registration'  => $this->registration,
                         'style'         => $this->style,
                         'classname'     => $this->classname,
+                        'innerclassname'=> $this->innerclassname,
                         'icons'         => $this->icons,
                     )
                 )

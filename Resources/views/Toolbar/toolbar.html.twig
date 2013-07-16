@@ -1,7 +1,7 @@
 {% set locparams = app.request.attributes.get('_route_params')|default({})|merge(app.request.query.all()) %}
 {% set main_route = app.request.attributes.get("_route") %}
 
-<div id="elsassSeeraiwerBar" class="eSeeraiwer-toolbar">
+<div id="elsassSeeraiwerBar" class="eSeeraiwer-toolbar {{ options.classname }}">
     <!-- START of Elsass Seeraiwer Toolbar -->
     <style type="text/css">
     {% if options.style == 'default' %}
@@ -13,7 +13,7 @@
     {% endif  %}
     </style>
     <div id="eSeeraiwerToolbarMainContent" class="eSeeraiwer-toolbarreset">
-        <div class="{{ options.classname }}">
+        <div class="{{ options.innerclassname }}">
             {% if app.debug %}
                 {#{ render(controller("ElsassSeeraiwerESBarBundle:Toolbar:toolbarVersion")) }#}
                 {{ include("ElsassSeeraiwerESBarBundle:Element:toolbarVersion.html.twig", { "version": version }) }}

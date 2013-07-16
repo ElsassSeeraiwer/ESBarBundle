@@ -21,7 +21,8 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->booleanNode('toolbar')->defaultTrue()->end()
-                ->variableNode('classname')->defaultValue('toto')->end()
+                ->variableNode('classname')->defaultValue('')->end()
+                ->variableNode('innerclassname')->defaultValue('')->end()
                 ->booleanNode('locale_tool')->defaultTrue()->end()
                 ->booleanNode('registration')->defaultTrue()->end()
                 ->variableNode('style')->defaultValue('google')->end()

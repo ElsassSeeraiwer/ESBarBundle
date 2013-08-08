@@ -26,6 +26,7 @@ class Configuration implements ConfigurationInterface
                 ->booleanNode('locale_tool')->defaultTrue()->end()
                 ->booleanNode('registration')->defaultTrue()->end()
                 ->variableNode('style')->defaultValue('google')->end()
+                ->variableNode('body_margin_top')->defaultFalse()->end()
                 ->scalarNode('position')
                     ->defaultValue('top')
                     ->validate()

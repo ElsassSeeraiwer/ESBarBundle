@@ -5,9 +5,9 @@
     <!-- START of Elsass Seeraiwer Toolbar -->
     <style type="text/css">
     {% if options.style == 'default' %}
-        {% include 'ElsassSeeraiwerESBarBundle:Toolbar:toolbar.css.twig' with { 'position': position, 'floatable': true } %}
+        {% include 'ElsassSeeraiwerESBarBundle:Toolbar:toolbar.css.twig' with { 'position': position, 'floatable': true, 'options': options } %}
     {% elseif options.style == 'google' %}
-        {% include 'ElsassSeeraiwerESBarBundle:Toolbar:google.css.twig' with { 'position': position, 'floatable': true } %}
+        {% include 'ElsassSeeraiwerESBarBundle:Toolbar:google.css.twig' with { 'position': position, 'floatable': true, 'options': options } %}
     {% else %}
         {% include options.style with { 'position': position, 'floatable': true } %}
     {% endif  %}

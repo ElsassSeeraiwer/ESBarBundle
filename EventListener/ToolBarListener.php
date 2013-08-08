@@ -25,6 +25,7 @@ class ToolBarListener implements EventSubscriberInterface
     protected $registration;
     protected $container;
     protected $style;
+    protected $body_margin_top;
     protected $classname;
     protected $innerclassname;
     protected $icons;
@@ -39,6 +40,7 @@ class ToolBarListener implements EventSubscriberInterface
         $this->locale_tool = $this->container->getParameter('elsass_seeraiwer_es_bar.toolbar.local_tool');
         $this->registration = $this->container->getParameter('elsass_seeraiwer_es_bar.toolbar.registration');
         $this->style = $this->container->getParameter('elsass_seeraiwer_es_bar.toolbar.style');
+        $this->body_margin_top = $this->container->getParameter('elsass_seeraiwer_es_bar.toolbar.body_margin_top');
         $this->classname = $this->container->getParameter('elsass_seeraiwer_es_bar.toolbar.classname');
         $this->innerclassname = $this->container->getParameter('elsass_seeraiwer_es_bar.toolbar.innerclassname');
         $this->icons = $this->container->getParameter('elsass_seeraiwer_es_bar.toolbar.icons');
@@ -98,6 +100,7 @@ class ToolBarListener implements EventSubscriberInterface
                         'classname'     => $this->classname,
                         'innerclassname'=> $this->innerclassname,
                         'icons'         => $this->icons,
+                        'body_margin_top' => $this->body_margin_top,
                     )
                 )
             ))."\n";
